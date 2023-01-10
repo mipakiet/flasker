@@ -1,3 +1,5 @@
-<h1> Hello World!</h1>
+{% extends 'base.html' %}
 
-<p>This is my web page</p>
+{% block content %}
+<p>Hello {{user_name|capitalize}}</p>
+{% endblock %}
