@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% if name %}
+    <h1>Update User!</h1>
+{% else %}
+    <h1>User list</h1>
+    <form method="POST" action="{{url_for('update', id=name_to_update.id)}}">
+        {{ form.hidden_tag() }}
+        {{ form.name.label(class="form-label") }}
+
+        {{ form.name(class="form-control", value=name_to_update.name) }}
+        <br>
+        {{ form.email.label(class="form-label") }}
+
+        {{ form.email(class="form-control", value=name_to_update.email) }}
+        <br>
+        {{ form.submit(class="btn btn-danger") }}
+    </form>
+
+    <br><br><br>
+
+{% endif %}
+
+
+{% endblock %}
